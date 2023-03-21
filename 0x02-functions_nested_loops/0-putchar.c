@@ -2,7 +2,7 @@
 /**
  * main - print _putchar
  * is written by phefu
- * Return: 0
+ * Return: Always 0
  */
 
 int main(void)
