@@ -5,16 +5,12 @@
  * @n: The number to be computed.
  * Return: The absolute value of th number or zero.
  */
-int _abs(int c)
-
+int _abs(int n)
 {
-	if (c >= 0)
+	if (n >= 0)
 	{
-	int abs_val;
-	
-	abs_val = c * -1; 
-	return (abs_val);
+		return (n);
 	}
-	return (c);
+	return (-n);
 }
 
