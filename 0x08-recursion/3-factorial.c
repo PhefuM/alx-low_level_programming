@@ -6,7 +6,6 @@
  *
  * return: if n > 0 - the factorial of the number
  *         if n < 0 - use 1 to indicate an error
- * return: 0 for factorial
  */
 int factorial(int n)
 {
