@@ -1,13 +1,14 @@
 #include "main.h"
 
 /**
- * _memset - fills a block of memory with a specific value
- * @s: starting address of memory to be filled
- * @b: desired value
- * @n: number of bytes to be changed
- *
- * Return: new value of the target
- */
+*_memset - The _memset() function fills
+* the first n bytes of the memory area
+* pointed to by s with the constant byte b
+*@s:target
+*@b: constant byte
+*@n:number of byte
+*Return: returns new value of target
+*/
 
 char *_memset(char *s, char b, unsigned int n)
 {
