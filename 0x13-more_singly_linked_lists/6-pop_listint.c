@@ -10,19 +10,25 @@
 
 int pop_listint(listint_t **head)
 {
-	listint_t *popped;
-	int content;
+	int hnode;
+	listint_t *cursor;
+	listint_t *h;
 
 	if (*head == NULL)
 	{
 		return (0);
 	}
 
-	popped = *head;
-	content = popped->n;
-	free(popped);
+	cursor = *head;
 
-	*head = (*head)->next;
-	return (content);
+	hnode = cursor->n;
+
+	h = cursor->next;
+
+	free(cursor);
+
+	*head = h;
+
+	return (hnode);
 
 }
