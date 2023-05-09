@@ -2,12 +2,12 @@
 #include <stdio.h>
 #include<stdlib.h>
 
-cahr *create_buffer(char *file);
+char *create_buffer(char *file);
 void close_file(int fd);
 
 /**
  * create_buffer - Function allocate 1024 bytes for a buffer.
- * @file: TName of the file buffer is storing chars for.
+ * @file: Name of the file buffer is storing chars for.
  *
  * Return: A pointer from the newly allocated buffer.
  */
@@ -15,7 +15,7 @@ char *create_buffer(char *file)
 {
 	char *buffer;
 
-	buffer = mallow(sizeof(char) * 1024);
+	buffer = malloc(sizeof(char) * 1024);
 
 	if (buffer == NULL)
 	{
@@ -52,7 +52,7 @@ void close_file(int fd)
  */
 int main(int argc, char *argv[])
 {
-	int from, to r, w;
+	int from, to, r, w;
 	char *buffer;
 
 	if (argc != 3)
@@ -64,13 +64,13 @@ int main(int argc, char *argv[])
 	buffer = create_buffer(argv[2]);
 	from = open(argv[1], O_RDONLY);
 	r = read(from, buffer, 1024);
-	to = open(argv[2], O_CREAT | OWRONLY | O_TRUNC, 0664);
+	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	do {
 		if (from == -1 || r == -1)
 		{
 			dprintf(STDERR_FILENO,
-				"Error: Can't read from %s\n", agrv[1]);
+				"Error: Can't read from %s\n", argv[1]);
 			free(buffer);
 			exit(98);
 		}
@@ -79,13 +79,13 @@ int main(int argc, char *argv[])
 		if (to == -1 || w == -1)
 		{
 			dprintf(STDERR_FILENO,
-				"Erorr: Can't wrote to %s\n", argv[2];
+				"Error: Can't wrote to %s\n", argv[2]);
 			free(buffer);
 			exit(99);
 		}
 
-		r = read(from, bufer, 1024);
-		to = open(argv[2], O_WRONGLY | O_APPEND);
+		r = read(from, buffer, 1024);
+		to = open(argv[2], O_WRONLY | O_APPEND);
 
 	} while (r > 0);
 
