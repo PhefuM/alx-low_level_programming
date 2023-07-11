@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage:cp file_from frile_to\n");
+		dprintf(STDERR_FILENO, "Usage:cp file_to file_from\n");
 		exit(97);
 	}
 
@@ -78,6 +78,8 @@ int main(int argc, char *argv[])
 			dprintf(STDERR_FILENO,
 				"Error: Can't read from file %s\n", argv[1]);
 			free(buffer);
+			close_file(from);
+			close_file(to);
 			exit(98);
 		}
 
@@ -85,8 +87,10 @@ int main(int argc, char *argv[])
 		if (to == -1 || w == -1)
 		{
 			dprintf(STDERR_FILENO,
-					"Error: Can't wrote to %s\n", argv[2]);
+					"Error: Can't write to %s\n", argv[2]);
 			free(buffer);
+			close_file(from);
+			close_file(to);
 			exit(99);
 		}
 
