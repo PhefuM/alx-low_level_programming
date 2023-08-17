@@ -5,7 +5,7 @@
  * nth node of a dlisint_t linked list
  *
  * @head: head of the list 
- * @index; index of the nth node
+ * @index: index of the nth node
  *
  * Return: the nth node or NULL
  */
