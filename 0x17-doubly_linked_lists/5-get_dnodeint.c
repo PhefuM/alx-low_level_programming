@@ -6,6 +6,8 @@
  *
  * @head: head of the list 
  * @index; index of the nth node
+ *
+ * Return: the nth node or NULL
  */
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
