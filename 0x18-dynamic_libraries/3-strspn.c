@@ -1,22 +1,31 @@
 #include "main.h"
-#include<stdio.h>
-#include<string.h>
 /**
- * _strspn - calculates the length in bytes of the intial segment of s
- * which consists entirely of bytes in accept
- * @accept: string of characters
- * @s: another string of characters
- * Return: bytes in @s consisting of bytes from accept
- */
-
+*_strspn - search the number of bytes in the initial
+* segment of s which consist only of bytes from accept
+*@s:segment targeted
+*@accept:reference bytes container
+*
+*Return:returns the number of bytes in the initial
+* segment of s which consist only of bytes from accept
+*/
 unsigned int _strspn(char *s, char *accept)
 {
-	int bytes = 0;
+	unsigned int bytes = 0;
+	int i;
 
-	while (*s && strchr(accept, *s))
+	while (*s)
 	{
+		for (i = 0; accept[i]; i++)
+		{
+			if (accept[i] == *s)
+			{
+				bytes++;
+				break;
+			}
+			else if ((accept[i + 1]) == '\0')
+				return (bytes);
+		}
 		s++;
-		bytes++;
 	}
 	return (bytes);
 }
