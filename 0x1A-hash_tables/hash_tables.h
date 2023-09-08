@@ -56,9 +56,9 @@ typedef struct shash_node_s
 {
 	char *key;
 	char *value;
-	struct shash-node_s *next;
-	struct shash-node_s *sprev;
-	struct shash-node_s *snext;
+	struct shash_node_s *next;
+	struct shash_node_s *sprev;
+	struct shash_node_s *snext;
 } shash_node_t;
 
 /**
@@ -87,3 +87,4 @@ void shash_table_print_rev(const shash_table_t *ht);
 void shash_table_delete(shash_table_t *ht);
 
 #endif /*_HASH_TABLES_H_ */
+
