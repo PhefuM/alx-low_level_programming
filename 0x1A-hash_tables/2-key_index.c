@@ -2,7 +2,7 @@
 
 /**
  * key_index - gives the index of a key
- * @key: key to get index for 
+ * @key: key to get index for
  * @size: size of the hash table
  *
  * Return: index for the key
